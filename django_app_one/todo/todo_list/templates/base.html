@@ -10,11 +10,11 @@
 
     
 
-    <title>Список задач</title>
+    <title>Список выпускников</title>
   </head>
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'home' %}">To-Do List</a>
+  <a class="navbar-brand" href="{% url 'home' %}">Graduates</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,9 +28,9 @@
     </ul>
     <form class="form-inline my-2 my-lg-0" method="POST">
     	{% csrf_token %}
-      <input class="form-control mr-sm-2" type="search" placeholder="Название задачи" aria-label="Search"
+      <input class="form-control mr-sm-2" type="search" placeholder="Фамилие и Имя" aria-label="Search"
       name="item">
-      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Добавить в список</button>
+      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Добавить выпускника</button>
     </form>
   </div>
 </nav> 

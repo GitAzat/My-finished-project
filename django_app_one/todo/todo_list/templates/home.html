@@ -19,13 +19,13 @@
 		{% if things.completed %}	
 			<tr class="table-secondary">
 				<td><a href="{% url 'edit' things.id %}">{{ things.item }}</a></td>
-				<td><center><a href="{% url 'uncross' things.id %}">Статус:выполнено</a></center></td>>
+				<td><center><a href="{% url 'uncross' things.id %}">Статус:рабочий</a></center></td>>
 				<td><center><a href="{% url 'delete' things.id %}">Delete</a></center></td>
 			</tr>
 		{% else %}
 		<tr>
 			<td><a href="{% url 'edit' things.id %}">{{ things.item }}</a></td>
-			<td><center><a href="{% url 'cross_off' things.id %}"> Статус:невыполнено</a></center></td>>
+			<td><center><a href="{% url 'cross_off' things.id %}"> Статус:безработный</a></center></td>>
 			<td><center><a href="{% url 'delete' things.id %}">Удалить</a></center></td>
 		</tr>
 	{% endif %}

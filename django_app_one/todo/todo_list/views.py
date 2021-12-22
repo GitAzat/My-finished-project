@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import List
 from .forms import ListForm
 from django.contrib import messages
+from django.http import HttpResponse
+from django.core import serializers
 
 def home(request):
 	if request.method == 'POST':
@@ -44,11 +46,35 @@ def edit(request,list_id):
 
 		if form.is_valid():
 			form.save()
-			messages.success(request, ('Item Has Been Edited!'))
+			messages.success(request, ('graduate has been edited!'))
 			return redirect('home')
+
 
 	else:
 		item = List.objects.get(pk=list_id)
 		return render(request, 'edit.html', {'item': item})
+
+def editDate(request,list_id):
+	if request.method == 'POST':
+		item = List.objects.get(pk=list_id)
+
+		form = ListForm(request.POST or None, instance=item)
+
+		if form.is_valid():
+			form.save()
+			messages.success(request, ('graduate has been edited!'))
+			return redirect('home')
+
+
+	else:
+		item = List.objects.get(pk=list_id)
+		return render(request, 'editDate.html', {'item': item})
+
+	
+	
+
+
+
+
 
 	
